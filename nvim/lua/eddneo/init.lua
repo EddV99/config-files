@@ -38,3 +38,4 @@ require("tokyonight").setup({
     ---@param colors ColorScheme
     on_highlights = function(highlights, colors) end,
 })
+require("eddneo.colorscheme")
