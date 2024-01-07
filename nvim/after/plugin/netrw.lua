@@ -1,5 +1,5 @@
 local options_append = {
-	netrw_keepdir = 0, --Keep the current directory and the browsing directory synced
+	netrw_keepdir = 1, --Keep the current directory and the browsing directory synced
 	netrw_winsize = "17", -- 17% size
 	netrw_localmkdir = "mkdir -p", -- change mkdir cmd
 	netrw_localcopycmd = "cp -r", -- change copy command

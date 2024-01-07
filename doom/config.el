@@ -11,13 +11,18 @@
 
 
 ;; Theme and Font
-(setq doom-theme 'doom-tokyo-night
-      doom-font (font-spec :family "JetBrains Mono NL" :size 16 :weight 'medium))
+(setq doom-theme 'doom-gruvbox
+      doom-font (font-spec :family "MartianMono Nerd Font" :size 16 :weight 'medium))
 
 ;; Custom line number colors
-(custom-theme-set-faces! 'doom-tokyo-night
-  '(line-number :foreground "#ff69eb")
-  '(line-number-current-line :foreground "#ffffff"))
+(custom-theme-set-faces! 'doom-gruvbox)
+  ;;'(line-number :foreground "#ff69eb")
+  ;;'(line-number-current-line :foreground "#ffffff"))
+
+;; ispell let apostrophe be part of words
+(setq ispell-local-dictionary-alist
+      '((nil "[[:alpha:]]" "[^[:alpha:]]" "['’]" t nil nil utf-8)))
+
 
 ;; Line Numbers
 (setq display-line-numbers-type 'relative)
@@ -65,4 +70,4 @@
 (after! org
   (setq org-log-done 'note)
   (setq org-todo-keywords '((sequence "TODO(t)" "ASSIGNMENT(a)"
-                             "QUIZ(q)" "TEST(e)" "PROJECT(p)" "MEETING(m)" "|" "MISSED(i)" "DONE(d)" "CANCELLED(c)" ))))
+                             "QUIZ(q)" "TEST(e)" "PROJECT(p)" "MEETING(m)" "CLASS(s)" "|" "MISSED(i)" "DONE(d)" "CANCELLED(c)" ))))

@@ -92,7 +92,6 @@ bindkey '^e' edit-command-line
 # My Alias'
 alias ls="ls -hN --color=auto --group-directories-first"
 alias la="ls -hNa --color=auto --group-directories-first"
-#alias mycli="mycli -h atr.eng.utah.edu -u u1105168"
 alias vim="nvim"
 alias lf="lfub"
 alias cat="bat"

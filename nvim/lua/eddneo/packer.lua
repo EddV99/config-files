@@ -16,22 +16,19 @@ return require('packer').startup(function(use)
     use {
         "folke/tokyonight.nvim",
         as = 'tokyonight',
-        -- lazy = false,
-        -- priority = 1000,
-        -- opts = {},
-        -- config = function()
-        --     vim.cmd('colorscheme tokyonight')
-        -- end
     }
     -- Papercolor colorscheme
     use "NLKNguyen/papercolor-theme"
 
     -- Treesitter
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+
     -- Harpoon
     use('ThePrimeagen/harpoon')
+
     -- Fugative (git interface)
     use('tpope/vim-fugitive')
+
     -- LSP
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -57,4 +54,29 @@ return require('packer').startup(function(use)
 
     -- VimBeGood Game
     use 'ThePrimeagen/vim-be-good'
+
+    -- Status Line
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+
+    -- Better lsp
+    use ({
+        'nvimdev/lspsaga.nvim',
+        after = 'nvim-lspconfig',
+        config = function()
+            require('lspsaga').setup({
+                ui = { code_action = '󰏉'} 
+            })
+        end,
+    })
+
+    -- Rust
+    use 'simrat39/rust-tools.nvim'
+
+    -- Debugger
+    -- use 'mfussenegger/nvim-dap'
+    -- use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+    -- use { 'theHamsta/nvim-dap-virtual-text', requires = { "mfussenegger/nvim-dap" } }
 end)
