@@ -68,6 +68,6 @@
 
 ;; Org Agenda
 (after! org
-  (setq org-log-done 'note)
+  (setq org-log-done 'nil)
   (setq org-todo-keywords '((sequence "TODO(t)" "ASSIGNMENT(a)"
                              "QUIZ(q)" "TEST(e)" "PROJECT(p)" "MEETING(m)" "CLASS(s)" "|" "MISSED(i)" "DONE(d)" "CANCELLED(c)" ))))

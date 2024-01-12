@@ -319,3 +319,4 @@ Vagrantfile=:\
 *.xspf=:\
 *.pdf=:\
 "
+. "$HOME/.cargo/env"

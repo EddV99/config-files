@@ -1,4 +1,4 @@
-local status, _ = pcall(vim.cmd, "colorscheme PaperColor")
+local status, _ = pcall(vim.cmd, "colorscheme catppuccin")
 
 if not status then
     print("Colorscheme not found!") -- Print an error message if the colorscheme is not installed

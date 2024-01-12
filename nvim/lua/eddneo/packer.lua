@@ -12,13 +12,16 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
-    -- Tokyonight colorscheme
+    -- tokyonight colorscheme
     use {
         "folke/tokyonight.nvim",
         as = 'tokyonight',
     }
-    -- Papercolor colorscheme
+    -- papercolor colorscheme
     use "NLKNguyen/papercolor-theme"
+
+    -- catppuccin colorscheme
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     -- Treesitter
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -62,18 +65,42 @@ return require('packer').startup(function(use)
     }
 
     -- Better lsp
-    use ({
+    use({
         'nvimdev/lspsaga.nvim',
         after = 'nvim-lspconfig',
         config = function()
             require('lspsaga').setup({
-                ui = { code_action = '󰏉'} 
+                ui = { code_action = '󰏉' }
             })
         end,
     })
 
     -- Rust
     use 'simrat39/rust-tools.nvim'
+
+    -- Nerdtree
+    use 'preservim/nerdtree'
+
+    use { 'nvim-orgmode/orgmode',
+        requires = { 'nvim-treesitter/nvim-treesitter' },
+        config = function()
+            require('orgmode').setup {}
+        end
+    }
+    -- ChatGTP
+    use({
+        "jackMort/ChatGPT.nvim",
+        config = function()
+            require("chatgpt").setup({
+                api_key_cmd = "mychatgptapikey"
+            })
+        end,
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim"
+        }
+    })
 
     -- Debugger
     -- use 'mfussenegger/nvim-dap'

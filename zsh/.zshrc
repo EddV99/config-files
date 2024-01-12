@@ -1,5 +1,7 @@
 # Run some programs
-eval $(keychain --eval --quiet --confhost --agents ssh id_rsa_github id_rsa_gitlab)
+if [[ $(tty) != *tty1* ]]; then
+    eval $(keychain --eval --quiet --confhost --agents ssh id_rsa_github id_rsa_gitlab)
+fi 
 
 # Some PATH stuff
 export PATH=~/.local/bin:$PATH
@@ -33,7 +35,7 @@ autoload -U colors && colors
 setopt prompt_subst
 
 # Config for prompt. PS1 synonym.
-prompt='%F{yellow}%n%f %F{magenta}%~%f %F{green}$(git_branch_name)%f%F{yellow}>%f '
+prompt='%F{#FFAFCC}%n%f %F{#BDB2FF}%~%f %F{#FEC868}$(git_branch_name)%f%F{#FFAFCC}>%f '
 
 # Show git branch stuff end -------------
 
@@ -95,6 +97,14 @@ alias la="ls -hNa --color=auto --group-directories-first"
 alias vim="nvim"
 alias lf="lfub"
 alias cat="bat"
+
+function clean(){
+    p=$(pacman -Qdtq)
+    echo "$p"
+}
+
+alias pacmanClean="sudo pacman -Rns $(clean)"
+alias gdb="gdb -tui"
 
 # LS Colors
 LS_COLORS="$LS_COLORS:di=01;34"
