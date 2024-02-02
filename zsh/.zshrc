@@ -97,13 +97,9 @@ alias la="ls -hNa --color=auto --group-directories-first"
 alias vim="nvim"
 alias lf="lfub"
 alias cat="bat"
-
-function clean(){
-    p=$(pacman -Qdtq)
-    echo "$p"
-}
-
-alias pacmanClean="sudo pacman -Rns $(clean)"
+alias image="sxiv"
+alias video="vlc"
+alias pdf="zathura"
 alias gdb="gdb -tui"
 
 # LS Colors

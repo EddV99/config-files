@@ -34,9 +34,7 @@ vim.opt.scrolloff = 8
 vim.opt.updatetime = 50
 
 --Color column
-vim.opt.colorcolumn = "80"
+--vim.opt.colorcolumn = "80"
 
--- LaTex Set
-vim.g.vimtex_view_method = 'zathura'
-
-
+-- System Clipboard
+vim.api.nvim_set_option("clipboard", "unnamed")

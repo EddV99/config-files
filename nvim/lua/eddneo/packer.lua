@@ -23,6 +23,9 @@ return require('packer').startup(function(use)
     -- catppuccin colorscheme
     use { "catppuccin/nvim", as = "catppuccin" }
 
+    -- one dark colorscheme
+    use 'navarasu/onedark.nvim'
+
     -- Treesitter
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
@@ -49,15 +52,6 @@ return require('packer').startup(function(use)
             { 'L3MON4D3/LuaSnip' },
         }
     }
-    -- VimTeX
-    use 'lervag/vimtex'
-
-    -- tmux navigator
-    use 'christoomey/vim-tmux-navigator'
-
-    -- VimBeGood Game
-    use 'ThePrimeagen/vim-be-good'
-
     -- Status Line
     use {
         'nvim-lualine/lualine.nvim',
@@ -78,32 +72,17 @@ return require('packer').startup(function(use)
     -- Rust
     use 'simrat39/rust-tools.nvim'
 
-    -- Nerdtree
-    use 'preservim/nerdtree'
-
-    use { 'nvim-orgmode/orgmode',
-        requires = { 'nvim-treesitter/nvim-treesitter' },
-        config = function()
-            require('orgmode').setup {}
-        end
+    -- Startup screen
+    use {
+        "startup-nvim/startup.nvim",
+        requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+        --config = function()
+        --    require("startup").setup(require("eddneo.customstartup"))
+        --end
     }
-    -- ChatGTP
-    use({
-        "jackMort/ChatGPT.nvim",
-        config = function()
-            require("chatgpt").setup({
-                api_key_cmd = "mychatgptapikey"
-            })
-        end,
-        requires = {
-            "MunifTanjim/nui.nvim",
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim"
-        }
-    })
 
     -- Debugger
-    -- use 'mfussenegger/nvim-dap'
-    -- use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
-    -- use { 'theHamsta/nvim-dap-virtual-text', requires = { "mfussenegger/nvim-dap" } }
+     use 'mfussenegger/nvim-dap'
+     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+     use { 'theHamsta/nvim-dap-virtual-text', requires = { "mfussenegger/nvim-dap" } }
 end)

@@ -11,13 +11,13 @@
 
 
 ;; Theme and Font
-(setq doom-theme 'doom-gruvbox
-      doom-font (font-spec :family "MartianMono Nerd Font" :size 16 :weight 'medium))
+(setq doom-theme 'doom-monokai-pro
+      doom-font (font-spec :family "RobotoMono Nerd Font" :size 18 :weight 'medium))
 
 ;; Custom line number colors
-(custom-theme-set-faces! 'doom-gruvbox)
-  ;;'(line-number :foreground "#ff69eb")
-  ;;'(line-number-current-line :foreground "#ffffff"))
+(custom-theme-set-faces! 'doom-monokai-pro
+  '(line-number :foreground "#f1ffc4")
+  '(line-number-current-line :foreground "#f1ffc4"))
 
 ;; ispell let apostrophe be part of words
 (setq ispell-local-dictionary-alist
@@ -66,8 +66,10 @@
 (setq hscroll-step 1)
 (setq hscroll-margin 1)
 
+
 ;; Org Agenda
 (after! org
+  (setq org-format-latex-options (plist-put org-format-latex-options :scale 1.7))
   (setq org-log-done 'nil)
   (setq org-todo-keywords '((sequence "TODO(t)" "ASSIGNMENT(a)"
-                             "QUIZ(q)" "TEST(e)" "PROJECT(p)" "MEETING(m)" "CLASS(s)" "|" "MISSED(i)" "DONE(d)" "CANCELLED(c)" ))))
+                             "QUIZ(q)" "TEST(e)" "PROJECT(p)" "MEETING(m)" "CLASS(s)" "|" "LATE(l)" "MISSED(i)" "DONE(d)" "CANCELLED(c)" ))))

@@ -27,4 +27,4 @@ bind(']d', '<cmd>Lspsaga diagnostic_jump_next<CR>')
 bind('[d', '<cmd>Lspsaga diagnostic_jump_prev<CR>')
 bind('<Leader>ot', '<cmd>Lspsaga term_toggle<CR>')
 
-
+require('lspconfig').clangd.setup{}
